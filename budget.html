@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Management - Finance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-brand">Finance Tracker</div>
+    <div class="nav-links">
+      <a href="index.html">Dashboard</a>
+      <a href="expenses.html">Expenses</a>
+      <a href="budget.html" class="active">Budget</a>
+      <a href="savings.html">Savings</a>
+      <a href="reports.html">Reports</a>
+      <a href="advice.html">Advice</a>
+      <a href="notifications.html" class="notification-badge">2</a>
+      <a href="#" id="logout">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Budget Management</h1>
+    
+    <div class="card">
+      <h2>Create New Budget</h2>
+      <form id="budget-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="budget-category">Category</label>
+            <select id="budget-category" required>
+              <option value="">Select Category</option>
+              <option>Food & Dining</option>
+              <option>Transportation</option>
+              <option>Utilities</option>
+              <option>Entertainment</option>
+              <option>Shopping</option>
+              <option>Housing</option>
+              <option>Healthcare</option>
+              <option>Education</option>
+              <option value="other">Other</option>
+            </select>
+            <input type="text" id="custom-budget-category" placeholder="Custom category" style="display: none;">
+          </div>
+          <div class="form-group">
+            <label for="budget-amount">Amount</label>
+            <input type="number" step="0.01" id="budget-amount" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="budget-period">Budget Period</label>
+            <select id="budget-period" required>
+              <option value="monthly">Monthly</option>
+              <option value="weekly">Weekly</option>
+              <option value="yearly">Yearly</option>
+              <option value="custom">Custom</option>
+            </select>
+          </div>
+          <div class="form-group" id="custom-dates" style="display: none;">
+            <label for="budget-start">Start Date</label>
+            <input type="date" id="budget-start">
+            <label for="budget-end">End Date</label>
+            <input type="date" id="budget-end">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="budget-notification">Notification Threshold (%)</label>
+          <input type="number" min="0" max="100" value="80" id="budget-notification">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Create Budget</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Your Budgets</h2>
+      <div class="budget-list">
+        <div class="budget-list-header">
+          <span>Category</span>
+          <span>Budget</span>
+          <span>Spent</span>
+          <span>Remaining</span>
+          <span>Progress</span>
+        </div>
+        <div id="budget-items">
+          <!-- Budgets will be populated by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/budget.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

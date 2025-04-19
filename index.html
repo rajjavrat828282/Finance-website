@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance Tracker - Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div>
+      <a href="index.html">Finance Tracker</a>
+    </div>
+    <div>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Dashboard</h1>
+    
+    <div class="card">
+      <h2>Quick Actions</h2>
+      <a href="expenses.html" class="btn btn-primary">Add Expense</a>
+      <a href="budget.html" class="btn btn-primary">Set Budget</a>
+    </div>
+
+    <div class="card">
+      <h2>Recent Expenses</h2>
+      <div id="expense-list">
+        <!-- JS will populate this -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/expenses.js"></script>
+</body>
+</html>

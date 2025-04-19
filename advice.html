@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance Advice - Finance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-brand">Finance Tracker</div>
+    <div class="nav-links">
+      <a href="index.html">Dashboard</a>
+      <a href="expenses.html">Expenses</a>
+      <a href="budget.html">Budget</a>
+      <a href="savings.html">Savings</a>
+      <a href="reports.html">Reports</a>
+      <a href="advice.html" class="active">Advice</a>
+      <a href="notifications.html" class="notification-badge">0</a>
+      <a href="#" id="logout">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Personalized Finance Advice</h1>
+    
+    <div class="card">
+      <h2>Investment Recommendations</h2>
+      <div class="risk-assessment">
+        <h3>Risk Assessment</h3>
+        <p>Complete our quick assessment to get personalized investment advice:</p>
+        <form id="risk-assessment">
+          <!-- Questions would be added by JS -->
+          <div id="assessment-questions"></div>
+          <button type="submit" class="btn btn-primary">Get Recommendations</button>
+        </form>
+      </div>
+      
+      <div id="investment-recommendations" style="display: none;">
+        <h3>Recommended Portfolio</h3>
+        <div class="portfolio-mix">
+          <div class="portfolio-item">
+            <h4>Stocks</h4>
+            <div class="portfolio-bar" id="stocks-bar"></div>
+            <p id="stocks-percent">60%</p>
+          </div>
+          <div class="portfolio-item">
+            <h4>Bonds</h4>
+            <div class="portfolio-bar" id="bonds-bar"></div>
+            <p id="bonds-percent">30%</p>
+          </div>
+          <div class="portfolio-item">
+            <h4>Cash</h4>
+            <div class="portfolio-bar" id="cash-bar"></div>
+            <p id="cash-percent">10%</p>
+          </div>
+        </div>
+        
+        <div class="specific-recommendations">
+          <h4>Specific Investment Options</h4>
+          <div id="investment-options">
+            <!-- Will be populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Market Trends & Education</h2>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="market-news">Market News</button>
+        <button class="tab-btn" data-tab="educational-content">Educational Content</button>
+        <button class="tab-btn" data-tab="investment-tools">Investment Tools</button>
+      </div>
+      
+      <div class="tab-content active" id="market-news">
+        <div class="news-item">
+          <h3>Latest Market Updates</h3>
+          <div id="market-updates">
+            <!-- Will be populated by JS -->
+          </div>
+        </div>
+      </div>
+      
+      <div class="tab-content" id="educational-content">
+        <div class="education-categories">
+          <h3>Learn About</h3>
+          <div class="category-grid">
+            <div class="category-card" data-category="stocks">
+              <h4>Stocks</h4>
+              <p>Learn about stock market investing</p>
+            </div>
+            <div class="category-card" data-category="mutual-funds">
+              <h4>Mutual Funds</h4>
+              <p>Understanding mutual funds</p>
+            </div>
+            <div class="category-card" data-category="bonds">
+              <h4>Bonds</h4>
+              <p>Fixed income investments</p>
+            </div>
+            <div class="category-card" data-category="retirement">
+              <h4>Retirement Planning</h4>
+              <p>Planning for your future</p>
+            </div>
+          </div>
+        </div>
+        <div id="education-content" style="display: none;">
+          <!-- Will be populated by JS -->
+        </div>
+      </div>
+      
+      <div class="tab-content" id="investment-tools">
+        <div class="tool-card">
+          <h3>Investment Calculator</h3>
+          <form id="investment-calculator">
+            <div class="form-group">
+              <label for="initial-amount">Initial Investment</label>
+              <input type="number" id="initial-amount" value="1000">
+            </div>
+            <div class="form-group">
+              <label for="monthly-contribution">Monthly Contribution</label>
+              <input type="number" id="monthly-contribution" value="100">
+            </div>
+            <div class="form-group">
+              <label for="years-to-grow">Years to Grow</label>
+              <input type="number" id="years-to-grow" value="10">
+            </div>
+            <div class="form-group">
+              <label for="expected-return">Expected Annual Return (%)</label>
+              <input type="number" id="expected-return" value="7" step="0.1">
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+          </form>
+          <div id="calculator-results" style="display: none;">
+            <h4>Projected Growth</h4>
+            <p>Final Amount: <span id="final-amount"></span></p>
+            <div class="chart-container">
+              <canvas id="growth-chart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/advice.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Reports - Finance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="charts.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-brand">Finance Tracker</div>
+    <div class="nav-links">
+      <a href="index.html">Dashboard</a>
+      <a href="expenses.html">Expenses</a>
+      <a href="budget.html">Budget</a>
+      <a href="savings.html">Savings</a>
+      <a href="reports.html" class="active">Reports</a>
+      <a href="advice.html">Advice</a>
+      <a href="notifications.html" class="notification-badge">0</a>
+      <a href="#" id="logout">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Financial Reports</h1>
+    
+    <div class="report-filters card">
+      <h2>Report Filters</h2>
+      <form id="report-filters">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="report-type">Report Type</label>
+            <select id="report-type">
+              <option value="expenses">Expense Analysis</option>
+              <option value="income">Income Analysis</option>
+              <option value="budget">Budget vs Actual</option>
+              <option value="savings">Savings Progress</option>
+              <option value="net-worth">Net Worth</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="time-period">Time Period</label>
+            <select id="time-period">
+              <option value="this-month">This Month</option>
+              <option value="last-month">Last Month</option>
+              <option value="this-year">This Year</option>
+              <option value="last-year">Last Year</option>
+              <option value="custom">Custom Range</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-row" id="custom-date-range" style="display: none;">
+          <div class="form-group">
+            <label for="start-date">Start Date</label>
+            <input type="date" id="start-date">
+          </div>
+          <div class="form-group">
+            <label for="end-date">End Date</label>
+            <input type="date" id="end-date">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="category-filter">Category Filter</label>
+          <select id="category-filter" multiple>
+            <option value="all" selected>All Categories</option>
+            <!-- Categories will be populated by JS -->
+          </select>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Generate Report</button>
+        <button type="button" id="export-report" class="btn btn-secondary">Export as PDF</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Expense Breakdown</h2>
+      <div class="chart-container">
+        <canvas id="expense-chart"></canvas>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Monthly Trends</h2>
+      <div class="chart-container">
+        <canvas id="trend-chart"></canvas>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Detailed Transactions</h2>
+      <table id="report-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Report data will be populated by JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/reports.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

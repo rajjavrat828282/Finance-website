@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications - Finance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-brand">Finance Tracker</div>
+    <div class="nav-links">
+      <a href="index.html">Dashboard</a>
+      <a href="expenses.html">Expenses</a>
+      <a href="budget.html">Budget</a>
+      <a href="savings.html">Savings</a>
+      <a href="reports.html">Reports</a>
+      <a href="advice.html">Advice</a>
+      <a href="notifications.html" class="active notification-badge">3</a>
+      <a href="#" id="logout">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Notifications</h1>
+    
+    <div class="card">
+      <div class="notification-header">
+        <h2>Your Alerts</h2>
+        <div class="notification-actions">
+          <button id="mark-all-read" class="btn btn-secondary">Mark All as Read</button>
+          <button id="clear-notifications" class="btn btn-danger">Clear All</button>
+        </div>
+      </div>
+      
+      <div class="notification-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="budget">Budget</button>
+        <button class="filter-btn" data-filter="savings">Savings</button>
+        <button class="filter-btn" data-filter="bills">Bills</button>
+        <button class="filter-btn" data-filter="advice">Advice</button>
+      </div>
+      
+      <div class="notification-list">
+        <div class="notification-item unread" data-type="budget">
+          <div class="notification-icon">
+            <span class="icon-budget"></span>
+          </div>
+          <div class="notification-content">
+            <h3>Budget Alert</h3>
+            <p>You've reached 85% of your "Dining Out" budget for this month.</p>
+            <small>2 hours ago</small>
+          </div>
+          <div class="notification-actions">
+            <button class="btn-icon mark-read" title="Mark as read">✓</button>
+          </div>
+        </div>
+        
+        <div class="notification-item unread" data-type="bills">
+          <div class="notification-icon">
+            <span class="icon-bill"></span>
+          </div>
+          <div class="notification-content">
+            <h3>Bill Reminder</h3>
+            <p>Your electricity bill of ₹1,250 is due in 3 days.</p>
+            <small>Yesterday</small>
+          </div>
+          <div class="notification-actions">
+            <button class="btn-icon mark-read" title="Mark as read">✓</button>
+          </div>
+        </div>
+        
+        <div class="notification-item" data-type="savings">
+          <div class="notification-icon">
+            <span class="icon-savings"></span>
+          </div>
+          <div class="notification-content">
+            <h3>Savings Progress</h3>
+            <p>You're 65% toward your "Emergency Fund" goal. Keep it up!</p>
+            <small>2 days ago</small>
+          </div>
+          <div class="notification-actions">
+            <button class="btn-icon mark-read" title="Mark as read">✓</button>
+          </div>
+        </div>
+        
+        <div class="notification-item" data-type="advice">
+          <div class="notification-icon">
+            <span class="icon-advice"></span>
+          </div>
+          <div class="notification-content">
+            <h3>Investment Opportunity</h3>
+            <p>Based on your risk profile, consider these 3 mutual funds.</p>
+            <small>1 week ago</small>
+          </div>
+          <div class="notification-actions">
+            <button class="btn-icon mark-read" title="Mark as read">✓</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>Notification Settings</h2>
+      <form id="notification-settings">
+        <div class="form-group">
+          <label>
+            <input type="checkbox" name="budget-alerts" checked>
+            Budget alerts
+          </label>
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" name="bill-reminders" checked>
+            Bill reminders
+          </label>
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" name="savings-updates" checked>
+            Savings progress updates
+          </label>
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" name="investment-advice" checked>
+            Investment advice
+          </label>
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" name="weekly-summary" checked>
+            Weekly summary
+          </label>
+        </div>
+        <div class="form-group">
+          <label>Notification Method</label>
+          <select name="notification-method">
+            <option value="in-app">In-App Only</option>
+            <option value="email">Email</option>
+            <option value="both">Both</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Settings</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/notifications.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
